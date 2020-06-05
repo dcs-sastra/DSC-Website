@@ -36,9 +36,9 @@ const App = () => {
         <Nav />
         <Suspense fallback={<Loader />}>
           <Switch>
-            <Route exact path="/" component={Home} />
             <Route exact path="/events" component={EventMain} />
             <Route exact path="/teams" component={Teams} />
+            <Route exact path="/" component={Home} />
           </Switch>
         </Suspense>
       </BrowserRouter>
