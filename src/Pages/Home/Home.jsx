@@ -26,7 +26,7 @@ const BG2 = styled.img`
   width: 120vw;
   left: 50%;
   z-index: -10;
-  top: 50vh;
+  top: 50%;
   transform: translate(-50%, -50%);
   @media (max-width: 768px) {
     top: 40vh;
@@ -62,6 +62,15 @@ const Section = styled.section`
   @media (max-width: 768px) {
     display: ${(props) => (props.sm ? "block" : "")};
   }
+`;
+
+const GallerySection = styled.section`
+  position: relative;
+  display: ${(props) => (props.sm ? "none" : "flex")};
+  @media (max-width: 768px) {
+    display: ${(props) => (props.sm ? "block" : "")};
+  }
+  margin-bottom: 20vh;
 `;
 
 const Card = styled.div`
@@ -205,20 +214,20 @@ const Home = () => {
         <BG1 src={path1} width="100%" />
         <Terminal />
       </Section>
-      <Section id="about">
+      <GallerySection id="about">
         <BG2 src={path2} width="100%" />
-        <Card>
-          <Title width="250px">About Us</Title>
-          <Paragraph>
-            Developer Student Clubs is a community where everyone is welcome. We
-            help students bridge the gap between theory and practice and grow
-            their knowledge by providing a peer-to-peer learning environment, by
-            conducting workshops, study jams and building solutions for local
-            businesses. Developer Student Clubs is a program supported by Google
-            Developers.
-          </Paragraph>
-        </Card>
-      </Section>
+        <div className="gallery-wrapper">
+          <div className="scrollbar-hider">
+            <ul className="gallery">
+              <li><img src="https://images.unsplash.com/photo-1551583899-d3f6258ec7c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/></li>
+              <li><img src="https://images.unsplash.com/photo-1593697820940-43e77b53a1e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/></li>
+              <li><img src="https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/></li>
+              <li><img src="https://images.unsplash.com/photo-1593937422082-286464cdc975?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/></li>
+              <li><img src="https://images.unsplash.com/photo-1526328828355-69b01701ca6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/></li>
+            </ul>
+          </div>
+        </div>
+      </GallerySection>
       <br />
       <TwitterAndContact id="contact">
         <BG3 src={path3} width="100%" />

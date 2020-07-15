@@ -80,3 +80,74 @@ p.scalable-font {
   text-decoration: underline;
   cursor: pointer;
 }
+
+.gallery-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.scrollbar-hider {
+  height: 400px;
+  padding-top: 20px;
+  overflow: hidden;
+  position: relative;
+  border-top: 10px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 10px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 1px 1px 15px var(--shadow-grey);  
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100vw;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+  height: 420px;
+  position: relative;
+}
+
+.gallery li {
+  border: solid 12px white;
+  border-bottom: solid 50px white;
+  box-shadow:0 0 15px 0px #555;
+  list-style: none;
+  margin: 30px auto 30px 50px;
+  animation: slide 5s infinite;
+  height: fit-content;
+}
+
+.gallery li img {
+  width: 200px;
+  height: 200px;
+}
+
+.gallery li:first-child {
+  margin-left: 50px;
+}
+
+.gallery li:nth-child(4n+0) {
+  transform: rotate(10deg);
+  background-color: var(--blue);
+}
+
+.gallery li:nth-child(4n+1) {
+  transform: rotate(0deg);
+  background-color: var(--red);
+}
+
+.gallery li:nth-child(4n+2) {
+  transform: rotate(-10deg);
+  background-color: var(--yellow);
+}
+
+.gallery li:nth-child(4n+3) {
+  transform: rotate(20deg);
+  background-color: var(--green);
+}
+
+.gallery li:last-child {
+  transform: rotate(-5deg);
+}
