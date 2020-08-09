@@ -15,6 +15,12 @@
   force = true
 
 [[redirects]]
+  from = "/google*.html"
+  to = "/static/google:splat.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
